@@ -1514,6 +1514,11 @@ a.tree-label:hover {
   color: var(--border-color);
 }
 
+.footer-copyright a, a[href*="http"] {
+  word-break: break-all; /* 或 word-wrap: break-word; */
+  white-space: normal;
+}
+
 /* ===== 普通页面 ===== */
 .page-single {
   max-width: var(--content-max);
