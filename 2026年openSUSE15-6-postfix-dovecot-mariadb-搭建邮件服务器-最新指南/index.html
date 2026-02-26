@@ -270,7 +270,10 @@
 
     <!-- 文章内容 -->
     <div class="post-content markdown-body">
-      <h2 id="openSUSE15-6-postfix-dovecot-mariadb-搭建邮件服务器"><a href="#openSUSE15-6-postfix-dovecot-mariadb-搭建邮件服务器" class="headerlink" title="openSUSE15.6: postfix-dovecot-mariadb-搭建邮件服务器"></a>openSUSE15.6: postfix-dovecot-mariadb-搭建邮件服务器</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>我在AWS购买一台配置为2C2G的lightsail轻型VPS云主机，由于工作繁忙，一直闲置。<br>恰逢26年春节假期，一下子有了大量空闲时间，本着物尽其用的原则，决定搭建邮件服务器。<br>这事儿如果成了，以后就拥有独家域名的邮箱，自己用起来随心所欲，还能分享给亲戚朋友，岂不美哉？</p>
+      <h2 id="openSUSE15-6-postfix-dovecot-mariadb-搭建邮件服务器"><a href="#openSUSE15-6-postfix-dovecot-mariadb-搭建邮件服务器" class="headerlink" title="openSUSE15.6: postfix-dovecot-mariadb-搭建邮件服务器"></a>openSUSE15.6: postfix-dovecot-mariadb-搭建邮件服务器</h2><blockquote>
+<p>标题是“指南”，纯粹是为了SEO，博主水平有限，</p>
+</blockquote>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>我在AWS购买一台配置为2C2G的lightsail轻型VPS云主机，由于工作繁忙，一直闲置。<br>恰逢26年春节假期，一下子有了大量空闲时间，本着物尽其用的原则，决定搭建邮件服务器。<br>这事儿如果成了，以后就拥有独家域名的邮箱，自己用起来随心所欲，还能分享给亲戚朋友，岂不美哉？</p>
 <p>但说起来容易，做起来煞费周折。</p>
 <p>一个原因是docker技术的普及，很多邮件方案均已打包成镜像，使用起来简单、方便。<br>另外一个原因，postfix系列软件安装、配置繁琐，还涉及域名解析及邮件服务专用的潜规则，对于普通人，有一定难度。</p>
 <p>现在大部分云计算厂商封禁25端口，历尽千辛，服务搭建完成后，你大概率会卡在这一步。<br>博主的解决方案是，使用”AWS Simple Email Service(SES)”邮件代理，只需要在postfix添加配置即可。</p>
