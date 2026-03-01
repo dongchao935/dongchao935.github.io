@@ -228,8 +228,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-03-01">
-        更新于 2026-03-01
+      <time datetime="2026-03-02">
+        更新于 2026-03-02
       </time>
     </span>
   
@@ -243,7 +243,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      19.4k 字
+      19.7k 字
     </span>
   
 
@@ -255,7 +255,7 @@
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       
-      约 65 分钟
+      约 66 分钟
     </span>
   
 
@@ -455,9 +455,9 @@
 <h4 id="创建邮件存储目录"><a href="#创建邮件存储目录" class="headerlink" title="创建邮件存储目录"></a>创建邮件存储目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 域名目录（如果手动创建）同样设置</span><br><span class="line">sudo mkdir -p /var/mail/vhosts/example.com</span><br><span class="line">sudo chown vmail:vmail /var/mail/vhosts/example.com</span><br><span class="line">sudo chmod 755 /var/mail/vhosts/example.com</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>注意：你只需要创建到域名级别的目录（&#x2F;var&#x2F;mail&#x2F;vhosts&#x2F;wisepkg.com&#x2F;），用户级目录 Dovecot 会自动创建。</p>
+<p>注意：你只需要创建到域名级别的目录（&#x2F;var&#x2F;mail&#x2F;vhosts&#x2F;wisepkg.com&#x2F;），用户级目录 Dovecot 会自动创建。 </p>
 </blockquote>
-
+<h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><h4 id="创建用户密码"><a href="#创建用户密码" class="headerlink" title="创建用户密码"></a>创建用户密码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 假设密码是 Password123</span><br><span class="line">sudo doveadm pw -s SHA512-CRYPT -p &#x27;Password123&#x27;</span><br><span class="line"># 输出</span><br><span class="line">&#123;SHA512-CRYPT&#125;$6$CaxxQ4e6VgnZiX0C$rClI9yGQIidEt92nsB3ZTpTt80O.V6U4cO0gTyJUYtSGBnzyaMt5.if3ecu9Bq4be0Sw69Eu9xAVZOetd5cPV.</span><br></pre></td></tr></table></figure>
     </div>
 
     <!-- 标签 -->
@@ -529,7 +529,7 @@
       <div class="toc-wrapper">
         <h3 class="toc-title">目录</h3>
         <div class="toc-content">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#openSUSE15-6-postfix-dovecot-mariadb-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">openSUSE15.6: postfix-dovecot-mariadb-搭建邮件服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.</span> <span class="toc-text">邮件服务搭建方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC"><span class="toc-number">2.</span> <span class="toc-text">软件版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">搭建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-openSUSE-Leap-15-6"><span class="toc-number">3.2.</span> <span class="toc-text">操作系统(openSUSE Leap 15.6)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.3.</span> <span class="toc-text">软件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Let%E2%80%99s-Encrypt%E8%AF%81%E4%B9%A6"><span class="toc-number">3.4.</span> <span class="toc-text">Let’s Encrypt证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEpostfix"><span class="toc-number">3.5.</span> <span class="toc-text">配置postfix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdovecot"><span class="toc-number">3.6.</span> <span class="toc-text">配置dovecot</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#openSUSE15-6-postfix-dovecot-mariadb-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">openSUSE15.6: postfix-dovecot-mariadb-搭建邮件服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.</span> <span class="toc-text">邮件服务搭建方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC"><span class="toc-number">2.</span> <span class="toc-text">软件版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">搭建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-openSUSE-Leap-15-6"><span class="toc-number">3.2.</span> <span class="toc-text">操作系统(openSUSE Leap 15.6)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.3.</span> <span class="toc-text">软件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Let%E2%80%99s-Encrypt%E8%AF%81%E4%B9%A6"><span class="toc-number">3.4.</span> <span class="toc-text">Let’s Encrypt证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEpostfix"><span class="toc-number">3.5.</span> <span class="toc-text">配置postfix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdovecot"><span class="toc-number">3.6.</span> <span class="toc-text">配置dovecot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">3.7.</span> <span class="toc-text">创建用户</span></a></li></ol></li></ol>
         </div>
       </div>
     </aside>
